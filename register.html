@@ -134,6 +134,10 @@
         const EMAIL_SERVICE_ID = "service_z09fuxl";
         const EMAIL_TEMPLATE_ID = "template_sgg6gwp";
 
+        const PDF_URL = "https://leadsbaton.github.io/14675-The-CIO-Strategic-Playbook-for-AI-in-2026/assets/pdf/The-CIO-Strategic-Playbook-for-AI-in-2026.pdf";
+
+
+
         /* ---------------------------------------------------------
            Boot
         --------------------------------------------------------- */
@@ -222,9 +226,16 @@
                 setLoading(true);
                 await emailjs.send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, payload);
 
-                showToast("Thank you! Your submission has been received.");
-                //clear data
-                form.reset();
+                showToast("Success! Your download will start now.");
+                form.classList.add('hidden');
+
+                // Direct download instead of web view
+                const link = document.createElement('a');
+                link.href = PDF_URL;
+                link.download = PDF_URL.split('/').pop() || 'report.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
 
             } catch (err) {
                 console.error('EmailJS Error:', err);
