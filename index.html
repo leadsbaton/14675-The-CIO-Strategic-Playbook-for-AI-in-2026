@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>For many enterprises, AI isn’t delivering. The solution is
+    knowledge graphs.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white-50 font-sans">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <div class="max-w-5xl mx-auto mt-6 md:p-6 text-center">
+    <!-- Title + Button -->
+    <h1 class="text-3xl md:text-3xl font-bold leading-snug text-gray-900">
+      For many enterprises, AI isn’t delivering. The solution is
+      knowledge graphs.
+    </h1>
+
+    
+      
+    <button id="downloadBtn"
+      class="mt-6  justify-center bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold shadow">
+      DOWNLOAD WHITEPAPER
+    </button>
+
+      <div class="block md:hidden mt-8 px-4">
+          <img src="assets/images/image 73.png" alt="Knowledge Graph Brain" class="w-full h-auto">
+      </div>
+    </div>
+ <!-- Main Section -->
+  <div class="max-w-5xl mx-auto p-4 md:p-6">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+      
+      <div class="md:col-span-7 space-y-6 text-[18px] leading-relaxed text-gray-800">
+        <p>
+          When models fail to produce promised results, leaders find themselves faced with two options: 
+          persist with incomplete AI programmes, or risk strategic irrelevance. Fortunately, 
+          there’s an alternative: fortify the existing strategy with knowledge graphs to execute as intended.
+        </p>
+
+        <p>
+          Pairing LLMs with knowledge graphs creates a neuro-symbolic AI system capable of producing 
+          accurate, contextual, traceable outputs that leaders can trust. Combined, these technologies 
+          unlock enterprise data in ways that standalone LLMs cannot: creating high-value, context-specific 
+          insights, building user confidence, reducing operational risk, and enabling AI agents 
+          that can act on behalf of users in predictable, transparent ways.
+        </p>
+      </div>
+
+      <div class="hidden md:block md:col-span-5">
+        <img src="assets/images/image 73.png" alt="Knowledge Graph Brain" 
+             class="w-full h-auto object-contain">
+      </div>
+    </div>
+
+    <div class="mt-12 space-y-4">
+      <h3 class="font-bold text-lg text-black">
+        Read the whitepaper to discover how knowledge graphs and LLMs together can help you deliver on your AI vision.
+      </h3>
+      <p>
+        <button id="downloadText" class="text-[#ff0000] font-bold uppercase hover:underline text-sm tracking-widest">
+          DOWNLOAD WHITEPAPER
+        </button>
+      </p>
+    </div>
+
+
+  </div>
+
+  <!-- Footer -->
+  <div id="footer" class="mt-10"></div>
+
+  <!-- JS -->
+  <script>
+    // Load navbar and footer
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+
+    // Register actions
+    function goRegister() {
+      window.open('ebook.html', '_blank');
+    }
+
+    document.getElementById('downloadBtn').addEventListener('click', goRegister);
+    document.getElementById('downloadText').addEventListener('click', goRegister);
+  </script>
+
+</body>
+
+</html>
